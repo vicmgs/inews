@@ -1,0 +1,33 @@
+{
+  "name": "inews",
+  "version": "1.0.0",
+  "description": "local new aggregator",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+ "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies" : {
+    "grunt": "^0.4.4",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^18.0.0",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-nodemon": "^0.4.1",
+    "grunt-shell": "^1.2.1" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maoist-macaroon/inews.git"
+  },
+  "author": "maoist-macaroon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maoist-macaroon/inews/issues"
+  },
+  "homepage": "https://github.com/maoist-macaroon/inews#readme"
+}
