@@ -17,28 +17,27 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > iNews
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > The market for iNews is made up of peeps interested in getting a custom news feed of current events in their area. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Local news hungry peeps will benefit from an up-to-date news feed sourced from their local community.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > iNews solves the problem of trying to filter through many news sources and getting to news that you want. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > TODO: Describe how your product elegantly solves the problem.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > TODO: A quote from a spokesperson in your company.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > TODO: Describe how easy it is to get started.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  > "With iNews I don't miss a maoist cat's dance in my neighborhood!"
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > TODO: Wrap it up and give pointers where the reader should go next.
