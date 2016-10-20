@@ -37,4 +37,19 @@ angular.module('inews.services', [])
   return {
     getDefaultNews: getDefaultNews
   }
+
+})
+.factory('geolocate', function($window) {
+  var getLoc = function() {
+    if ($window.navigator.geolocation) {
+      
+      $window.navigator.geolocation.getCurrentPosition(function(position){
+        console.log('here');
+        return position;
+      });
+    }
+  };
+
+  return {getLoc: getLoc};
+
 });
