@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static(__dirname + '/../client/'));
+app.use(express.static(__dirname + '/client'));
 
-app.listen(3000, function () {
-  console.log('listening on port 3000');
-});
+app.set('port', (process.env.PORT || 5000) );
+
+app.listen(app.get('port'), function () {
+  console.log('listening');
+})
