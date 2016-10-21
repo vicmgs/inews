@@ -2,23 +2,23 @@ angular.module('inews.localNews', [])
 
 .controller('localNewsController', function($scope, News, $location, geolocate) {
   $scope.news = {};
-  $scope.position = '';
-  
+  $scope.lat =  '37.783682999999996';
+  $scope.long = '-122.40906949999999';
+
   geolocate.getLoc(function(position) {
     $scope.position = position;
-    console.log($scope.position);
   });
-  // var initializeUSNews = function(src) {
-  //   News.getDefaultNews(src)
-  //     .then(function(data) {
-  //       $scope.usNews = data.data.articles.slice(0,5);
-  //       console.log($scope.usNews);
-  //     })
-  //     .catch(function(error) {
-  //       console.log(error);
-  //     });
-  // }
 
-  // initializeUSNews('cnbc');
+  var initializeLocalNews = function(lat, long) {
+    News.getNeighborhood(lat, long)
+      .then(function(data) {
+        console.log(data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+  initializeLocalNews($scope.lat, $scope.long);
 
 });

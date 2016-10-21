@@ -10,13 +10,13 @@
     </head>
     <body ng-app='inews'>
       <div id='Nav'></div>
-      
+
       <div ng-controller='localNewsController' id='LocalNews'>
-          
+        
       </div>
-      
+
       <div id='CustomNews'></div>
-      
+
       <div ng-controller='defaultNewsController' id='USNews'>
         <div ng-repeat='news in usNews'>
           <img class='tile' ng-src='{{ news.urlToImage}}'>
@@ -46,7 +46,7 @@
       <script src="lib/angular-aria/angular-aria.js"></script>
       <script src="lib/angular-material/angular-material.js"></script>
       <script src="lib/angular-route/angular-route.js"></script>
-      
+
       <script src="app/services/services.js"></script>
       <script src="app/defaultNews/defaultNews.js"></script>
       <script src="app/localNews/localNews.js"></script>

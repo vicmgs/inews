@@ -8,7 +8,6 @@ angular.module('inews.defaultNews', [])
     News.getDefaultNews(src)
       .then(function(data) {
         $scope.usNews = data.data.articles.slice(0,5);
-        console.log($scope.usNews);
       })
       .catch(function(error) {
         console.log(error);
