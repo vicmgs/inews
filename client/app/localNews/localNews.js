@@ -4,19 +4,13 @@ angular.module('inews.localNews', [])
   $scope.localnews = {};
   $scope.searchnews = {};
 
-  $scope.lat =  '37.793595';
-  $scope.long = '-122.401307';
+  $scope.lat;
+  $scope.long;
 
-  geolocate.getLoc(function(position) {
-    $scope.position = position;
-  });
-
-  var query;
   var initializeLocalNews = function(lat, long) {
     News.getNeighborhood(lat, long)
       .then(function(data) {
-        query = data.neighbourhood.split(' ').join('+') + '+' + data.city.split(' ').join('+');
-        return News.getBingNews(query);
+        return News.getBingNews(data.neighbourhood.split(' ').join('+') + '+' + data.city.split(' ').join('+'));
       })
       .then(function(data) {
         $scope.localnews = data.data.value;
@@ -36,6 +30,10 @@ angular.module('inews.localNews', [])
       });
   };
 
-  initializeLocalNews($scope.lat, $scope.long);
+  geolocate.getLoc(function(position) {
+    $scope.lat = position.coords.latitude;
+    $scope.long = position.coords.longitude;
+    initializeLocalNews($scope.lat, $scope.long);
+  });
 
 });
