@@ -4,10 +4,8 @@ angular.module('inews.customNews', [])
   $scope.custom1news = {};
   $scope.custom2news = {};
 
-  var query1 = 'Fremont+CA';
-  var query2 = 'Oakland+CA';
 
-  var initializeCustom1 = function() {
+  $scope.initializeCustom1 = function(query1) {
       News.getBingNews(query1)
       .then(function(data) {
         $scope.custom1news = data.data.value;
@@ -17,7 +15,7 @@ angular.module('inews.customNews', [])
       });
   };
 
-  var initializeCustom2 = function() {
+  $scope.initializeCustom2 = function(query2) {
       News.getBingNews(query2)
       .then(function(data) {
         $scope.custom2news = data.data.value;
@@ -28,6 +26,6 @@ angular.module('inews.customNews', [])
   };
 
 
-  initializeCustom1();
-  initializeCustom2();
+  $scope.initializeCustom1('Business');
+  $scope.initializeCustom2('Sports');
 });
