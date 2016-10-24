@@ -7,7 +7,7 @@ angular.module('inews.defaultNews', [])
   var initializeUSNews = function(src) {
     News.getDefaultNews(src)
       .then(function(data) {
-        $scope.usNews = data.data.articles.slice(0,5);
+        $scope.usNews = data.data.articles.slice(0,10);
       })
       .catch(function(error) {
         console.log(error);
@@ -17,12 +17,12 @@ angular.module('inews.defaultNews', [])
   var initializeWorldNews = function(src) {
     News.getDefaultNews(src)
       .then(function(data) {
-        $scope.worldNews = data.data.articles.slice(0,5);
+        $scope.worldNews = data.data.articles.slice(0,10);
       })
       .catch(function(error) {
         console.log(error);
       });
   }
   initializeUSNews('cnbc');
-  initializeWorldNews('cnn');
+  initializeWorldNews('google-news');
 });

@@ -12,26 +12,36 @@
       <div id='Nav'></div>
 
       <div ng-controller='localNewsController' id='LocalNews'>
-        
+        <h2>Local News</h2>
+        <div ng-repeat='news in localnews | limitTo:3'>
+          <img class='tile' ng-src='{{ news.image.thumbnail.contentUrl}}'>
+          <p>{{ news.name}}</p>
+          <p>{{ news.description}}</p>
+          <p>{{ news.datePublished}}</p>
+          <!-- <p>{{ news.url}}</p> -->
+        </div>
+        <hr>
       </div>
 
       <div id='CustomNews'></div>
 
       <div ng-controller='defaultNewsController' id='USNews'>
-        <div ng-repeat='news in usNews'>
+        <h2>U.S. News</h2>
+        <div ng-repeat='news in usNews | limitTo:3'>
           <img class='tile' ng-src='{{ news.urlToImage}}'>
-          <li>{{ news.description}}</li>
-          <li>{{ news.publishedAt}}</li>
-          <li>{{ news.author}}</li>
-          <!-- <li>{{ news.url}}</li> -->
+          <p>{{ news.title}}</p>
+          <p>{{ news.description}}</p>
+          <p>{{ news.publishedAt}}</p>
+          <!-- <p>{{ news.url}}</p> -->
         </div>
         <hr>
-        <div ng-repeat='news in worldNews'>
+        <h2>World News</h2>
+        <div ng-repeat='news in worldNews | limitTo:3'>
           <img class='tile' ng-src='{{ news.urlToImage}}'>
-          <li>{{ news.description}}</li>
-          <li>{{ news.publishedAt}}</li>
-          <li>{{ news.author}}</li>
-          <!-- <li>{{ news.url}}</li> -->
+          <p>{{ news.title}}</p>
+          <p>{{ news.description}}</p>
+          <p>{{ news.publishedAt}}</p>
+          <!-- <p>{{ news.url}}</p> -->
         </div>
       </div>
 

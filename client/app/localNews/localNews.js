@@ -1,18 +1,23 @@
 angular.module('inews.localNews', [])
 
 .controller('localNewsController', function($scope, News, $location, geolocate) {
-  $scope.news = {};
-  $scope.lat =  '37.783682999999996';
-  $scope.long = '-122.40906949999999';
+  $scope.localnews = {};
+  $scope.lat =  '37.793595';
+  $scope.long = '-122.401307';
 
   geolocate.getLoc(function(position) {
     $scope.position = position;
   });
 
+  var query;
   var initializeLocalNews = function(lat, long) {
     News.getNeighborhood(lat, long)
       .then(function(data) {
-        console.log(data);
+        query = data.neighbourhood.split(' ').join('+') + '+' + data.city.split(' ').join('+');
+        return News.getLocalNews(query);
+      })
+      .then(function(data) {
+        $scope.localnews = data.data.value;
       })
       .catch(function(error) {
         console.log(error);
