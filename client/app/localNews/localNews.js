@@ -14,7 +14,7 @@ angular.module('inews.localNews', [])
     News.getNeighborhood(lat, long)
       .then(function(data) {
         query = data.neighbourhood.split(' ').join('+') + '+' + data.city.split(' ').join('+');
-        return News.getLocalNews(query);
+        return News.getBingNews(query);
       })
       .then(function(data) {
         $scope.localnews = data.data.value;

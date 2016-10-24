@@ -21,7 +21,7 @@ angular.module('inews.services', [])
   //   });
   // };
 
-  var getLocalNews = function(query) {
+  var getBingNews = function(query) {
     return $http({
       method: 'GET',
       url: 'https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=' + query + '&count=10&offset=0&mkt=en-us&safeSearch=Moderate',
@@ -55,7 +55,7 @@ angular.module('inews.services', [])
   return {
     getDefaultNews: getDefaultNews,
     getNeighborhood: getNeighborhood,
-    getLocalNews: getLocalNews
+    getBingNews: getBingNews
   };
 
 })

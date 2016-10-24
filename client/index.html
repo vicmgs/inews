@@ -14,38 +14,62 @@
       <div ng-controller='localNewsController' id='LocalNews'>
         <h2>Local News</h2>
         <div ng-repeat='news in localnews | limitTo:3'>
-          <img class='tile' ng-src='{{ news.image.thumbnail.contentUrl}}'>
-          <p>{{ news.name}}</p>
+          <a ng-href="{{ news.url}}">
+            <img class='tile' ng-src='{{ news.image.thumbnail.contentUrl}}'>
+            <p>{{ news.name}}</p>
+          </a>
           <p>{{ news.description}}</p>
           <p>{{ news.datePublished}}</p>
-          <!-- <p>{{ news.url}}</p> -->
         </div>
         <hr>
       </div>
 
-      <div id='CustomNews'></div>
+      <div ng-controller='customNewsController' id='CustomNews'>
+        <h2>Fremont News</h2>
+        <div ng-repeat='news in custom1news | limitTo:3'>
+          <a ng-href="{{ news.url}}">
+            <img class='tile' ng-src='{{ news.image.thumbnail.contentUrl}}'>
+            <p>{{ news.name}}</p>
+          </a>
+          <p>{{ news.description}}</p>
+          <p>{{ news.datePublished}}</p>
+        </div>
+        <hr>
+
+        <h2>Oakland News</h2>
+        <div ng-repeat='news in custom2news | limitTo:3'>
+          <a ng-href="{{ news.url}}">
+            <img class='tile' ng-src='{{ news.image.thumbnail.contentUrl}}'>
+            <p>{{ news.name}}</p>
+          </a>
+          <p>{{ news.description}}</p>
+          <p>{{ news.datePublished}}</p>
+        </div>
+        <hr>
+      </div>
 
       <div ng-controller='defaultNewsController' id='USNews'>
         <h2>U.S. News</h2>
         <div ng-repeat='news in usNews | limitTo:3'>
-          <img class='tile' ng-src='{{ news.urlToImage}}'>
-          <p>{{ news.title}}</p>
+          <a ng-href="{{ news.url}}">
+            <img class='tile' ng-src='{{ news.urlToImage}}'>
+            <p>{{ news.title}}</p>
+          </a>
           <p>{{ news.description}}</p>
           <p>{{ news.publishedAt}}</p>
-          <!-- <p>{{ news.url}}</p> -->
         </div>
         <hr>
         <h2>World News</h2>
         <div ng-repeat='news in worldNews | limitTo:3'>
-          <img class='tile' ng-src='{{ news.urlToImage}}'>
-          <p>{{ news.title}}</p>
+          <a ng-href="{{ news.url}}">
+            <img class='tile' ng-src='{{ news.urlToImage}}'>
+            <p>{{ news.title}}</p>
+          </a>
           <p>{{ news.description}}</p>
           <p>{{ news.publishedAt}}</p>
-          <!-- <p>{{ news.url}}</p> -->
         </div>
+        <hr>
       </div>
-
-      <hr>
 
       <footer>
         <p>&copy; iNews 2016</p>
@@ -60,6 +84,7 @@
       <script src="app/services/services.js"></script>
       <script src="app/defaultNews/defaultNews.js"></script>
       <script src="app/localNews/localNews.js"></script>
+      <script src="app/customNews/customNews.js"></script>
       <script src="app/app.js"></script>
     </body>
 </html>
